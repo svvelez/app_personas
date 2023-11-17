@@ -13,19 +13,23 @@
 
 </head>
 <body>
-    <h1 class="page-header">Personas</h1>
+    <h1 class="page-header">Huespedes</h1>
 <div class="well well-sm text-right">
-<a class="btn btn-primary" href="?m=nuevo">Agregar Persona</a>
+<a class="btn btn-primary" href="?m=nuevo">Agregar Huesped</a>
 </div>
 
 <table class="table table-striped">
     <thead>
     <tr>
-    <th scope="col">Numero Identificación</th>
+  
     <th scope="col">Nombres</th>
     <th scope="col">Apellido</th>
-    <th scope="col" >Correo Electronico</th>
-    <th scope="col">Telefono</th>
+    <th scope="col">Numero Identificación</th>
+    <th scope="col">Genero</th>
+    <th scope="col">Telefono Contacto</th>
+    <th scope="col">Direcciòn</th>
+    <th scope="col" >Email</th>
+    
     <th scope="col">Acción</th>
     <th ></th>
     </tr>
@@ -35,11 +39,15 @@
     <?php foreach ($dato as $key => $value)
     foreach ($value as $va ): ?>
     <tr>
-    <td> <?php echo $va["documento_identidad"]; ?></td>
+    
     <td><?php echo $va["nombre"];?></td>
-    <td><?php echo $va["apellido"]; ?></td>
+    <td><?php echo $va["apellidos"]; ?></td>
+    <td> <?php echo $va["numero_identificacion"]; ?></td>
+    <td><?php echo $va["genero"]; ?></td>
+    <td><?php echo $va["telefono_contacto"]; ?></td>
+    <td><?php echo $va["direccion_residencia"]; ?></td>
     <td><?php echo $va["email"]; ?></td>
-    <td><?php echo $va["telefono"]; ?></td>
+    
     <td>
     <i class="glyphicon glyphicon-edit"><a href="?m=editar&id=<?php echo $va["id"]; ?>"> Editar</a></i>
     </td>

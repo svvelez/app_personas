@@ -16,11 +16,7 @@
 <h1>NUEVO</h1>
 <hr>
 <form action="">
-<div class="form-group">
-<label>Documento Identidad</label>
-<input type="text" name="documento_identidad" value="" class="form-control" placeholder="Ingrese su documento de identidad" data-validacion-
-tipo="requerido|min:3" />
-</div>
+
 <div class="form-group">
 <label>nombre</label>
 <input type="text" name="nombre" value="" class="form-control"
@@ -28,18 +24,38 @@ placeholder="Ingrese sus Nombres" data-validacion-tipo="requerido|min:7" />
 </div>
 <div class="form-group">
 <label>Apellido</label>
-<input type="text" name="apellido" value=" " class="form-control"
+<input type="text" name="apellidos" value=" " class="form-control"
 placeholder="Ingrese sus apellidos" data-validacion-tipo="requerido|date" />
 </div>
+<div class="form-group">
+<label>Numero Identificacion</label>
+<input type="text" name="numero_identificacion" value="" class="form-control" placeholder="Ingrese su documento de identidad" data-validacion-
+tipo="requerido|min:3" />
+</div>
+
+<div class="form-group">
+<label>Genero</label>
+<input type="text" name="genero" value="" class="form-control" placeholder="Ingrese su documento de identidad" data-validacion-
+tipo="requerido|min:3" />
+</div>
+
+<div class="form-group">
+Telefono Contacto<label>T</label>
+<input type="text" name="telefono_contacto" value="" class="form-control"
+placeholder="Ingrese su telefono" data-validacion-tipo="requerido|min:8" />
+</div>
+
+
+<div class="form-group">
+<label>Direccion Residencia</label>
+<input type="text" name="direccion_residencia" value="" class="form-control" placeholder="Ingrese su documento de identidad" data-validacion-
+tipo="requerido|min:3" />
+</div>
+
 <div class="form-group">
 <label>Email</label>
 <input type="text" name="email" value="" class="form-control"
 placeholder="Ingrese su email" data-validacion-tipo="requerido|min:8" />
-</div>
-<div class="form-group">
-Telefono<label>T</label>
-<input type="text" name="telefono" value="" class="form-control"
-placeholder="Ingrese su telefono" data-validacion-tipo="requerido|min:8" />
 </div>
 <input type="hidden" name="m" value="guardar">
 <hr />

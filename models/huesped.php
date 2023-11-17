@@ -9,22 +9,27 @@ class Modelo{
     {
         $this->Modelo=array();
         $this->personas = array();
-        $this->tabla= "personas";
-        $this->db=new PDO('mysql:host=localhost;dbname=crudpersonas',"root","");
+        $this->tabla= "huesped";
+        $this->db=new PDO('mysql:host=localhost;dbname=crudd',"root","");
     }
     public function mostrar($tabla,$condicion){
-        $consul="select * from " .$tabla.";";
+        if($condicion != null){
+            $consul="select * from " .$tabla." where ".$condicion.";";
+        }else{
+            $consul="select * from " .$tabla.";";
+        }
+        
         $resu=$this->db->query($consul);
         while($filas=$resu->fetchAll(PDO::FETCH_ASSOC)){
-            $this->personas[]=$filas;
+            $this->huesped[]=$filas;
         }
-        return $this->personas;
+        return $this->huesped;
     }
 
     
     public function insertar($tabla, $data){
-        $consulta="insert into ".$tabla." values(null,". $data .")";
-        echo $consulta;
+        $consulta="insert into ".$tabla." (nombre,apellidos,numero_identificacion,genero,telefono_contacto,direccion_residencia,email) values(". $data .");";
+        //echo $consulta;
         $resultado=$this->db->query($consulta);
         if ($resultado) {
         return true;
@@ -34,7 +39,8 @@ class Modelo{
         }
 
         public function actualizar($tabla, $data, $condicion){
-            $consulta="update ".$tabla." set ". $data ." where ".$condicion;
+            $consulta="update ".$tabla." set ". $data ." where ".$condicion.";";
+            //echo $consulta;
             $resultado=$this->db->query($consulta);
             if ($resultado) {
             return true;
